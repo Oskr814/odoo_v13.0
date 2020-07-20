@@ -13,7 +13,7 @@ class Session(models.Model):
     end_date = fields.Date(string="End Date", store=True,
         compute='_get_end_date', inverse='_set_end_date')
     active = fields.Boolean(default=True)
-
+    color = fields.Integer()
     duration = fields.Float(digits=(6, 2), help="Duration in days")
     seats = fields.Integer(string="Number of seats")
     instructor_id = fields.Many2one('res.partner', string="Instructor",
